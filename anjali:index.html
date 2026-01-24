@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TiN5 Clinical Longevity Report | Anjali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tin5-gold: #c5a059;
+            --tin5-dark: #121212;
+            --tin5-grey: #f8f8f8;
+            --tin5-border: #e5e5e5;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--tin5-grey);
+            color: var(--tin5-dark);
+            -webkit-font-smoothing: antialiased;
+            padding-bottom: 80px;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+        .gold-text { color: var(--tin5-gold); }
+        .bg-gold { background-color: var(--tin5-gold); }
+        
+        .card {
+            background: white;
+            border: 1px solid var(--tin5-border);
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .nav-active { color: var(--tin5-gold); }
+        .step-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            opacity: 0.15;
+            position: absolute;
+            right: 1rem;
+            top: 0.5rem;
+        }
+        .biological-outcome {
+            background: #fdfaf4;
+            border-left: 3px solid var(--tin5-gold);
+        }
+        @media (max-width: 640px) {
+            .hero-title { font-size: 2.5rem; }
+            .section-padding { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white border-b border-gray-100 py-6 px-6 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <div>
+                <h2 class="text-[0.65rem] tracking-[0.3em] font-semibold text-gray-400 uppercase">Personalised Protocol</h2>
+                <h1 class="serif text-2xl">Client: Anjali</h1>
+            </div>
+            <div class="text-right">
+                <img src="https://www.tin5skin.com/logo.png" alt="TiN5" class="h-6 ml-auto" onerror="this.style.display='none'">
+                <span class="text-[0.6rem] font-mono opacity-50">ID: T5-AN-2024</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        
+        <!-- Assessment -->
+        <section id="assessment" class="mb-12">
+            <h3 class="serif text-3xl mb-6">Skin Architecture Assessment</h3>
+            <div class="card p-6">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/2 flex items-center justify-center bg-gray-50 rounded-lg p-8 border border-dashed border-gray-200">
+                        <div class="text-center">
+                            <p class="text-[0.65rem] uppercase tracking-widest text-gray-400 font-bold mb-2">Vascular Scan</p>
+                            <div class="serif text-sm italic text-gray-600">Dermal Densification Objective</div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <span class="status-badge bg-amber-50 text-amber-600">Translucent Dermis</span>
+                        <h4 class="font-semibold text-lg mt-2">The Tyndall Effect Analysis</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed mt-2">
+                            Anjali presents with "thin gun" skin allowing light to penetrate and reflect off deep reticular veins. Strategy: Focus on <strong>Dermal Densification</strong> and <strong>Vascular Stabilisation</strong> to create a "curtain effect" hiding deeper vascularity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The 30-Day Matrix -->
+        <section id="program" class="mb-12">
+            <div class="flex justify-between items-end mb-6">
+                <h3 class="serif text-3xl">The 30-Day Fortification</h3>
+                <span class="text-xs font-semibold gold-text">10-DAY CYCLE MATRIX</span>
+            </div>
+
+            <!-- Day 1 -->
+            <div class="card p-6 relative">
+                <div class="step-number">01</div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 01</span>
+                        <h4 class="serif text-xl">A Gradual Rebirth</h4>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider text-gray-400 mb-2">Protocol: Yellow LED</h5>
+                        <p class="text-sm leading-relaxed">Vascular Stabilisation. Yellow light reduces superficial inflammation and triggers lymphatic drainage to "quiet" reactivity.</p>
+                    </div>
+                    <div class="biological-outcome p-4 rounded-lg">
+                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider gold-text mb-2">Biological Outcome</h5>
+                        <p class="text-xs italic leading-relaxed"><strong>Calm:</strong> Reducing vascular dilation to prevent pressure on visible vessels.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 11 -->
+            <div class="card p-6 relative">
+                <div class="step-number">11</div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 11</span>
+                        <h4 class="serif text-xl">A Gradual Rebirth</h4>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider text-gray-400 mb-2">Protocol: Electroporation</h5>
+                        <p class="text-sm leading-relaxed">Barrier Sealing. Infusion of high-weight Hyaluronic Acid and Ceramides to repair the leaky barrier and stop TEWL.</p>
+                    </div>
+                    <div class="biological-outcome p-4 rounded-lg">
+                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider gold-text mb-2">Biological Outcome</h5>
+                        <p class="text-xs italic leading-relaxed"><strong>Seal:</strong> Restoring the lipid shield to prepare for the intensive Day 21 phase.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day 21 -->
+            <div class="card p-6 border-gold border-2 relative">
+                <div class="step-number">21</div>
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 21</span>
+                        <h4 class="serif text-xl gold-text">A Youthful Renewal</h4>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider text-gray-400 mb-2">Protocol: 0.5mm + 40B Exosomes</h5>
+                        <p class="text-sm leading-relaxed">Dermal Densification. 0.5mm channels deliver repair codes to fibroblasts, instructing them to thicken the matrix.</p>
+                    </div>
+                    <div class="biological-outcome p-4 rounded-lg">
+                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider gold-text mb-2">Biological Outcome</h5>
+                        <p class="text-xs italic leading-relaxed"><strong>Densify:</strong> Triggers massive collagen synthesis to "hide" deep reticular veins via opacity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Longevity Roadmap -->
+        <section id="roadmap" class="mb-12">
+            <h3 class="serif text-3xl mb-6">Longevity Roadmap</h3>
+            <div class="card p-6">
+                <div class="space-y-8">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="status-badge bg-black text-white">Months 1–6</span>
+                            <span class="text-xs font-bold uppercase tracking-widest gold-text">The Building Phase</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <strong>Protocol:</strong> The 10-Day Matrix (Rebirth > Rebirth > Youthful Renewal).<br>
+                            <strong>Goal:</strong> Increase dermal thickness by up to 600%. Creating the "padding" required to mask green veins through skin density.
+                        </p>
+                    </div>
+                    <div class="border-t border-gray-100 pt-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="status-badge bg-gold text-white">Months 7–12</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-400">The Volumisation Phase</span>
+                        </div>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <strong>New Treatment:</strong> Collagen Gun (Direct Dermal Infusion).<br>
+                            <strong>Goal:</strong> Address "Facial Fullness." A bio-stimulatory lift to fill upper cheek and under-eye hollows, further camouflaging prominent veins.
+                        </p>
+                        <div class="mt-3 text-[10px] uppercase font-bold text-gray-400">Maintenance: A Gradual Rebirth every 14 days.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home Care Protocol -->
+        <section id="homecare" class="mb-12">
+            <h3 class="serif text-3xl mb-6">Home Care Protocol</h3>
+            
+            <div class="card p-5 border-l-4 border-l-gold mb-6">
+                <h4 class="font-bold text-xs uppercase gold-text mb-2">The "Needle Pulse" Protocol (Mandatory)</h4>
+                <p class="text-sm leading-relaxed">
+                    <strong>Application:</strong> Apply <strong>The Daily Power Cord (5B Exosomes)</strong> every evening for 5 days following your Day 21 session.<br>
+                    <span class="text-xs italic text-gray-500 mt-1 block">Rationale: Ensuring micro-channels are saturated with repair signals while the entry window is open.</span>
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="card p-5">
+                    <h5 class="text-[0.65rem] font-bold uppercase tracking-widest mb-3 text-gray-400">Morning (AM)</h5>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex justify-between"><span>Enzyme Wash (Lather only)</span> <span class="text-gray-400">Cleanse</span></li>
+                        <li class="flex justify-between"><span>The Healer (3 drops)</span> <span class="text-gray-400">Repair</span></li>
+                        <li class="flex justify-between"><span>The Essential</span> <span class="text-gray-400">Shield</span></li>
+                        <li class="flex justify-between font-bold"><span>SPF</span> <span class="gold-text">Non-Negotiable</span></li>
+                    </ul>
+                </div>
+                <div class="card p-5">
+                    <h5 class="text-[0.65rem] font-bold uppercase tracking-widest mb-3 text-gray-400">Evening (PM)</h5>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex justify-between"><span>Enzyme Wash (Double)</span> <span class="text-gray-400">Cleanse</span></li>
+                        <li class="flex justify-between"><span>The Healer (5 drops)</span> <span class="text-gray-400">Intensive</span></li>
+                        <li class="flex justify-between"><span>Hydragel (3x Weekly)</span> <span class="gold-text">Cooling Mask</span></li>
+                        <li class="flex justify-between"><span>The Essential</span> <span class="text-gray-400">Seal</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Golden Rules -->
+        <section id="rules" class="mb-12">
+            <div class="bg-black text-white rounded-xl p-8">
+                <h3 class="serif text-2xl mb-6 border-b border-gray-800 pb-4 text-white">Clinical "Golden Rules" (Anjali)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                    <div>
+                        <h5 class="gold-text text-[0.6rem] font-bold uppercase tracking-widest mb-2">The 10-Day Cadence</h5>
+                        <p class="text-xs leading-relaxed text-gray-400">Do not stretch the gap beyond 10 days during the first 6 months. Consistency is required to "force" the skin to thicken.</p>
+                    </div>
+                    <div>
+                        <h5 class="gold-text text-[0.6rem] font-bold uppercase tracking-widest mb-2">Temperature Discipline</h5>
+                        <p class="text-xs leading-relaxed text-gray-400">Avoid hot water and steam. These cause the dark green veins to dilate and become more visible.</p>
+                    </div>
+                    <div>
+                        <h5 class="gold-text text-[0.6rem] font-bold uppercase tracking-widest mb-2">Acid Suspension</h5>
+                        <p class="text-xs leading-relaxed text-gray-400">Strictly no Resurfacer for 6 months. We are focused on "adding" layers (densification), not "removing" them (exfoliation).</p>
+                    </div>
+                    <div>
+                        <h5 class="gold-text text-[0.6rem] font-bold uppercase tracking-widest mb-2">Collagen Gun Preparation</h5>
+                        <p class="text-xs leading-relaxed text-gray-400">Introduced in Month 7 ONLY once the barrier is confirmed to be no longer "leaky" through densification.</p>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-gray-800 text-center">
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest">Protocol v3.5 | TiN5 Skin Longevity London</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Mobile Nav -->
+    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3 flex justify-between items-center z-[100] sm:hidden">
+        <a href="#assessment" class="flex flex-col items-center gap-1 nav-active">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            <span class="text-[0.55rem] font-bold uppercase">Report</span>
+        </a>
+        <a href="#program" class="flex flex-col items-center gap-1 text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2-2v12a2 2 0 002 2z" /></svg>
+            <span class="text-[0.55rem] font-bold uppercase">Matrix</span>
+        </a>
+        <a href="#homecare" class="flex flex-col items-center gap-1 text-gray-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+            <span class="text-[0.55rem] font-bold uppercase">Care</span>
+        </a>
+    </nav>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.querySelectorAll('nav a').forEach(a => a.classList.replace('nav-active', 'text-gray-400'));
+                this.classList.replace('text-gray-400', 'nav-active');
+            });
+        });
+    </script>
+</body>
+</html>
