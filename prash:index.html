@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>TiN5 Clinical Longevity Report | Prash</title>
+    <title>TiN5 Skin Architecture Report | Prashant R. Daswani</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
     <style>
@@ -12,13 +12,17 @@
             --tin5-dark: #121212;
             --tin5-grey: #f8f8f8;
             --tin5-border: #e5e5e5;
+            /* Status Colors */
+            --status-green: #10B981;
+            --status-amber: #F59E0B;
+            --status-red: #EF4444;
         }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--tin5-grey);
             color: var(--tin5-dark);
             -webkit-font-smoothing: antialiased;
-            padding-bottom: 80px; /* Space for mobile nav */
+            padding-bottom: 80px;
         }
         .serif { font-family: 'Playfair Display', serif; }
         .gold-text { color: var(--tin5-gold); }
@@ -28,10 +32,55 @@
             background: white;
             border: 1px solid var(--tin5-border);
             border-radius: 12px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
         }
+
+        /* --- Theme: Structural Platinum (Now used for Collagen Gun) --- */
+        .card-platinum {
+            background: #F8FAFC;
+            border: 1px solid #CBD5E1;
+        }
+        .text-platinum { color: #475569; }
+        .text-platinum-dark { color: #334155; }
+        .badge-platinum {
+            background-color: #E2E8F0;
+            color: #475569;
+            border: 1px solid #CBD5E1;
+        }
+
+        /* --- Theme: Luxury Gold (Now used for Youthful Renewal) --- */
+        .card-luxury-gold {
+            background: linear-gradient(145deg, #FFFFFF 0%, #FFFCF2 100%);
+            border: 1px solid #D4AF37;
+            box-shadow: 0 4px 20px rgba(197, 160, 89, 0.15);
+        }
+        .text-luxury-gold { color: #997B3D; }
+        .badge-luxury-gold {
+            background-color: #FFF9E6;
+            color: #997B3D;
+            border: 1px solid #E6D2A0;
+        }
+
+        /* --- New Theme: Architectural Rose (For Resurfacing) --- */
+        .card-rose {
+            background: linear-gradient(145deg, #FFF5F1 0%, #FFF0F5 100%); /* Soft Pink/Orange mix */
+            border: 1px solid #FB7185; /* Rose border */
+            box-shadow: 0 4px 20px rgba(251, 113, 133, 0.15);
+        }
+        .text-rose { color: #BE123C; }
+        .badge-rose {
+            background-color: #FFF1F2;
+            color: #BE123C;
+            border: 1px solid #FECDD3;
+        }
+
         .status-badge {
             display: inline-block;
             padding: 4px 12px;
@@ -42,37 +91,106 @@
             font-weight: 600;
         }
         .nav-active { color: var(--tin5-gold); }
+        
         .step-number {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            opacity: 0.15;
+            font-size: 4rem;
+            opacity: 0.06;
             position: absolute;
-            right: 1rem;
-            top: 0.5rem;
+            right: -0.25rem;
+            bottom: -0.75rem;
+            top: auto;
+            pointer-events: none;
+            line-height: 1;
+            z-index: 0;
         }
-        .biological-outcome {
-            background: #fdfaf4;
-            border-left: 3px solid var(--tin5-gold);
+
+        .card > div.content-layer {
+            position: relative;
+            z-index: 10;
         }
-        /* Mobile Specifics */
-        @media (max-width: 640px) {
-            .hero-title { font-size: 2.5rem; }
-            .section-padding { padding: 1.5rem; }
+
+        .week-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
         }
+        @media (min-width: 768px) {
+            .week-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .social-dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .social-green { background-color: var(--status-green); }
+        .social-amber { background-color: var(--status-amber); }
+        .social-red { background-color: var(--status-red); }
+        
+        .score-bar-bg {
+            height: 6px;
+            width: 100%;
+            background-color: #f1f5f9;
+            border-radius: 99px;
+            overflow: hidden;
+        }
+        .score-bar-fill-target {
+            height: 100%;
+            background-color: var(--tin5-gold);
+            border-radius: 99px;
+            z-index: 1;
+        }
+        .score-bar-fill-current {
+            height: 100%;
+            background-color: #94a3b8;
+            border-radius: 99px;
+            z-index: 2;
+        }
+
+        .time-badge {
+            font-size: 0.65rem;
+            font-weight: 500;
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid #e5e5e5;
+            color: #9ca3af;
+            background-color: #ffffff;
+            white-space: nowrap;
+        }
+        .card-platinum .time-badge {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #64748b;
+        }
+        .card-luxury-gold .time-badge {
+            background-color: #fffbeb;
+            border-color: #fcd34d;
+            color: #b45309;
+        }
+        .card-rose .time-badge {
+            background-color: #FFF1F2;
+            border-color: #FECDD3;
+            color: #BE123C;
+        }
+
     </style>
 </head>
 <body>
 
     <!-- Header / Branding -->
-    <header class="bg-white border-b border-gray-100 py-6 px-6 sticky top-0 z-50">
+    <header class="bg-white border-b border-gray-100 py-6 px-6 sticky top-0 z-50 shadow-sm">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
             <div>
                 <h2 class="text-[0.65rem] tracking-[0.3em] font-semibold text-gray-400 uppercase">Personalised Protocol</h2>
-                <h1 class="serif text-2xl">Client: Prash</h1>
+                <h1 class="serif text-2xl">Client: Prashant R. Daswani</h1>
             </div>
             <div class="text-right">
-                <img src="https://www.tin5skin.com/logo.png" alt="TiN5" class="h-6 ml-auto" onerror="this.style.display='none'">
-                <span class="text-[0.6rem] font-mono opacity-50">ID: T5-PR-2024</span>
+                <div class="h-6 ml-auto font-serif font-bold text-xl tracking-tighter">TiN5</div>
+                <span class="text-[0.6rem] font-mono opacity-50">ID: T5-PRD-2026</span>
             </div>
         </div>
     </header>
@@ -81,226 +199,550 @@
         
         <!-- Assessment Section -->
         <section id="assessment" class="mb-12">
-            <h3 class="serif text-3xl mb-6">Skin Architecture Assessment</h3>
-            <div class="card p-6">
-                <div class="flex flex-col md:flex-row gap-8">
-                    <div class="md:w-1/2">
-                        <div class="relative rounded-lg overflow-hidden bg-gray-200 aspect-square">
-    <img src="https://github.com/iamnicholaschow/TiN5SKinProtocol/blob/main/analysis.jpg?raw=true" 
-         alt="Prash Skin Assessment" 
-         class="w-full h-full object-cover">
-</div>
+            <div class="flex flex-col md:flex-row justify-between items-end mb-6">
+                <h3 class="serif text-3xl">Skin Architecture Assessment</h3>
+                <span class="text-xs text-gray-400">Date: February 07, 2026</span>
+            </div>
+            
+            <div class="card p-6 !block mb-6">
+                <!-- Added items-center to parent flex container for vertical alignment -->
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    
+                    <!-- Image Block -->
+                    <div class="md:w-1/3 w-full">
+                        <div class="relative rounded-lg overflow-hidden bg-gray-200 aspect-[3/4] flex items-center justify-center">
+                             <div class="text-center p-6">
+                                <span class="text-4xl text-gray-300 block mb-2">PD</span>
+                                <span class="text-xs uppercase tracking-widest text-gray-400">Biological Map</span>
+                             </div>
+                             <img src="prashskinanalyse.jpg" onerror="this.style.display='none'" alt="Prashant Skin Architecture" class="absolute inset-0 w-full h-full object-cover">
+                        </div>
                     </div>
-                    <div class="md:w-1/2 flex flex-col justify-center">
-                        <div class="mb-4">
-                            <span class="status-badge bg-red-50 text-red-600">Critical Priority</span>
-                            <h4 class="font-semibold text-lg mt-2">Dermal Irregularities</h4>
-                            <p class="text-sm text-gray-600 leading-relaxed mt-2">
-                                Prash presents with a hyper-active sebaceous environment. The accumulation of whiteheads and blackheads acts as a <strong>"Nutrient Trap"</strong>—a physical barrier that prevents high-molecular-weight actives from penetrating the target tissue.
+
+                    <!-- Text Diagnosis (Aligned with image) -->
+                    <div class="md:w-2/3 flex flex-col justify-center h-full">
+                        <div class="mb-6">
+                            <span class="status-badge bg-red-50 text-red-600 mb-3">Structural Reconstruction</span>
+                            <h4 class="font-semibold text-xl mb-2">Bio-Depleted Atrophic Architecture</h4>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-3">
+                                The assessment reveals a critical "Biological Debt." While the external scan highlights <strong>Atrophic Scarring</strong> and <strong>Mid-Face Sagging</strong>, the internal biomarkers confirm <strong>High Stress (4/5)</strong> and <strong>Poor Sleep (2/5)</strong>.
+                            </p>
+                            <p class="text-sm text-gray-600 leading-relaxed">
+                                We cannot simply ablate the skin with lasers immediately; the tissue is too exhausted. We must first "fund" the skin with a high-frequency <strong>Bio-Currency Loading Phase</strong> (Exosomes) and perform precision structural touchups to support the mid-face before the final resurfacing.
                             </p>
                         </div>
-                        <div class="space-y-3">
-                            <div class="flex items-center gap-3 text-sm border-t border-gray-100 pt-3">
-                                <span class="w-2 h-2 rounded-full bg-gold"></span>
-                                <span>Phase 1: Systematic Clearing & Hydration</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <span class="w-2 h-2 rounded-full bg-gold"></span>
-                                <span>Phase 2: High-Energy Non-Ablative Remodelling</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm">
-                                <span class="w-2 h-2 rounded-full bg-gold"></span>
-                                <span>Phase 3: Ablative Tissue Vaporisation</span>
+                        
+                        <!-- Biometric Scorecard -->
+                        <div class="bg-gray-50 rounded-lg p-5 border border-gray-100">
+                            <h5 class="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest mb-4">Baseline vs. Target Metrics</h5>
+                            
+                            <div class="space-y-4">
+                                <!-- Metric 1 -->
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="font-medium text-gray-600">Matrix Density (Scar Depth)</span>
+                                        <span class="text-gray-400">Current: 4/10 <span class="mx-1">→</span> <span class="gold-text font-bold">Target: 9/10</span></span>
+                                    </div>
+                                    <div class="score-bar-bg relative">
+                                        <div class="score-bar-fill-target absolute top-0 left-0" style="width: 90%"></div>
+                                        <div class="score-bar-fill-current absolute top-0 left-0" style="width: 40%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Metric 2 -->
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="font-medium text-gray-600">Structural Tensility (Mid-Face)</span>
+                                        <span class="text-gray-400">Current: 5/10 <span class="mx-1">→</span> <span class="gold-text font-bold">Target: 8/10</span></span>
+                                    </div>
+                                    <div class="score-bar-bg relative">
+                                        <div class="score-bar-fill-target absolute top-0 left-0" style="width: 80%"></div>
+                                        <div class="score-bar-fill-current absolute top-0 left-0" style="width: 50%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Metric 3 -->
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="font-medium text-gray-600">Bio-Currency Reserves</span>
+                                        <span class="text-gray-400">Current: 3/10 <span class="mx-1">→</span> <span class="gold-text font-bold">Target: 10/10</span></span>
+                                    </div>
+                                    <div class="score-bar-bg relative">
+                                        <div class="score-bar-fill-target absolute top-0 left-0" style="width: 100%"></div>
+                                        <div class="score-bar-fill-current absolute top-0 left-0" style="width: 30%"></div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- The 4-Week "Skin Architecture" Program -->
-        <section id="program" class="mb-12">
-            <div class="flex justify-between items-end mb-6">
-                <h3 class="serif text-3xl">The 4-Week Architecture</h3>
-                <span class="text-xs font-semibold gold-text">INTENSIVE PHASE</span>
-            </div>
-
-            <!-- Week 1 -->
-            <div class="card p-6 relative">
-                <div class="step-number">01</div>
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <span class="text-[0.65rem] font-bold text-gray-400">WEEK 01</span>
-                        <h4 class="serif text-xl">A Gradual Rebirth</h4>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider text-gray-400 mb-2">Focus & Rationale</h5>
-                        <p class="text-sm leading-relaxed">Ultrasonic exfoliation and steam extractions to clear oxidised debris. Blue LED treatment for porphyrin reduction.</p>
-                    </div>
-                    <div class="biological-outcome p-4 rounded-lg">
-                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider gold-text mb-2">Biological Outcome</h5>
-                        <p class="text-xs italic leading-relaxed"><strong>Microbiome Reset:</strong> "Decapping" the skin by removing sebum plugs. Blue LED neutralises porphyrins to eliminate the "nutrient trap" at the source.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Week 2 -->
-            <div class="card p-6 relative">
-                <div class="step-number">02</div>
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <span class="text-[0.65rem] font-bold text-gray-400">WEEK 02</span>
-                        <h4 class="serif text-xl">Dermal Saturation</h4>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider text-gray-400 mb-2">Focus & Rationale</h5>
-                        <p class="text-sm leading-relaxed">Second deep-cleanse cycle. Electroporation infusion of <strong>The Concentrate</strong> to resolve cellular dryness. Red LED for collagen priming.</p>
-                    </div>
-                    <div class="biological-outcome p-4 rounded-lg">
-                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider gold-text mb-2">Biological Outcome</h5>
-                        <p class="text-xs italic leading-relaxed"><strong>Thermal Heat Sink:</strong> Saturated tissue allows the skin to safely conduct laser energy in the following week without surface-level burning.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Week 3 -->
-            <div class="card p-6 border-gold border-2 relative">
-                <div class="step-number">03</div>
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <span class="text-[0.65rem] font-bold text-gray-400">WEEK 03</span>
-                        <h4 class="serif text-xl gold-text">A Scar Rewritten</h4>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider text-gray-400 mb-2">Focus & Rationale</h5>
-                        <p class="text-sm leading-relaxed"><strong>Sellas Laser + 55 Billion hUC-MSC Exosomes.</strong> Thermal energy creates micro-pathways for deep structural reprogramming.</p>
-                    </div>
-                    <div class="biological-outcome p-4 rounded-lg">
-                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider gold-text mb-2">Biological Outcome</h5>
-                        <p class="text-xs italic leading-relaxed"><strong>Dermal Software Update:</strong> Sellas coagulates old scar tissue. 55B Exosomes deliver the "code" to fibroblasts to synthesise smooth, organised collagen.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Week 4 -->
-            <div class="card p-6 relative">
-                <div class="step-number">04</div>
-                <div class="flex justify-between items-start mb-4">
-                    <div>
-                        <span class="text-[0.65rem] font-bold text-gray-400">WEEK 04</span>
-                        <h4 class="serif text-xl">The Refined Surface</h4>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider text-gray-400 mb-2">Focus & Rationale</h5>
-                        <p class="text-sm leading-relaxed">Post-laser extraction of "pushed out" impurities. Electroporation of The Concentrate to stabilise the new barrier.</p>
-                    </div>
-                    <div class="biological-outcome p-4 rounded-lg">
-                        <h5 class="text-[0.6rem] font-bold uppercase tracking-wider gold-text mb-2">Biological Outcome</h5>
-                        <p class="text-xs italic leading-relaxed"><strong>Purge Management:</strong> Extracting deep-seated debris surfaced by the laser ensures the newly formed skin surface remains refined and blemish-free.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Longevity Roadmap -->
+        <!-- Longevity Roadmap (Strategy) -->
         <section id="roadmap" class="mb-12">
-            <h3 class="serif text-3xl mb-6">Skin Longevity Roadmap</h3>
+            <h3 class="serif text-3xl mb-6">Strategic Roadmap</h3>
             <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm border-collapse bg-white rounded-lg overflow-hidden">
+                <table class="w-full text-left text-sm border-collapse bg-white rounded-lg overflow-hidden shadow-sm border border-gray-100">
                     <thead>
-                        <tr class="bg-dark text-white bg-[#1a1a1a]">
+                        <tr class="bg-[#1a1a1a] text-white">
                             <th class="p-4 font-normal text-xs uppercase tracking-widest">Phase</th>
-                            <th class="p-4 font-normal text-xs uppercase tracking-widest text-center">Protocol</th>
-                            <th class="p-4 font-normal text-xs uppercase tracking-widest">Objective</th>
+                            <th class="p-4 font-normal text-xs uppercase tracking-widest text-center">Timeline</th>
+                            <th class="p-4 font-normal text-xs uppercase tracking-widest text-center">Objective</th>
+                            <th class="p-4 font-normal text-xs uppercase tracking-widest">Primary Action</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-100">
                         <tr>
-                            <td class="p-4">
-                                <span class="block font-semibold">Phase 1</span>
-                                <span class="text-[10px] text-gray-400">Months 2-5</span>
-                            </td>
-                            <td class="p-4 text-center">
-                                <span class="block text-xs">Sellas + Exosomes</span>
-                                <span class="text-[10px] gold-text font-bold uppercase">4-Week Cycle</span>
-                            </td>
-                            <td class="p-4 text-xs text-gray-500">Sebum modulation and mid-dermal remodelling.</td>
+                            <td class="p-4"><span class="block font-semibold">Phase 1: Clear</span></td>
+                            <td class="p-4 text-center"><span class="text-[10px] font-bold uppercase text-gray-400">Month 1</span></td>
+                            <td class="p-4 text-center"><span class="block text-xs">Clear Porphyrins & Debris</span></td>
+                            <td class="p-4 text-xs text-gray-500">Enzymatic Deep Cleaning</td>
                         </tr>
                         <tr>
-                            <td class="p-4">
-                                <span class="block font-semibold">Phase 2</span>
-                                <span class="text-[10px] text-gray-400">Months 6-9</span>
-                            </td>
-                            <td class="p-4 text-center">
-                                <span class="block text-xs">CO2 Fractional</span>
-                                <span class="text-[10px] gold-text font-bold uppercase">8-Week Cycle</span>
-                            </td>
-                            <td class="p-4 text-xs text-gray-500">Deep resurfacing of ice-pick and boxcar scars.</td>
+                            <td class="p-4"><span class="block font-semibold">Phase 2: Load</span></td>
+                            <td class="p-4 text-center"><span class="text-[10px] gold-text font-bold uppercase">Months 2–6</span></td>
+                            <td class="p-4 text-center"><span class="block text-xs">Stack 6 Layers of Exosomes</span></td>
+                            <td class="p-4 text-xs text-gray-500">10-Day Pulse: Needling + Touchup</td>
                         </tr>
                         <tr>
-                            <td class="p-4">
-                                <span class="block font-semibold">Phase 3</span>
-                                <span class="text-[10px] text-gray-400">Months 10+</span>
-                            </td>
-                            <td class="p-4 text-center">
-                                <span class="block text-xs">Pico Precision</span>
-                                <span class="text-[10px] gold-text font-bold uppercase">As Needed</span>
-                            </td>
-                            <td class="p-4 text-xs text-gray-500">Targeting PIH (dark spots) and sustaining pore refinement.</td>
+                            <td class="p-4"><span class="block font-semibold">Phase 3: Resurface</span></td>
+                            <td class="p-4 text-center"><span class="text-[10px] text-gray-400 font-bold uppercase">Months 6–9</span></td>
+                            <td class="p-4 text-center"><span class="block text-xs">Plane Down Scar Edges</span></td>
+                            <td class="p-4 text-xs text-gray-500">CO₂ Fractional Laser Trilogy</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4"><span class="block font-semibold">Phase 4: Lift</span></td>
+                            <td class="p-4 text-center"><span class="text-[10px] text-gray-400 font-bold uppercase">Months 9+</span></td>
+                            <td class="p-4 text-center"><span class="block text-xs">Anti-Gravity Lock (SMAS)</span></td>
+                            <td class="p-4 text-xs text-gray-500">Ultraformer HIFU</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
+        <!-- The Program (Tactics) -->
+        <section id="program" class="mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 border-b border-gray-200 pb-4">
+                <div>
+                    <span class="text-xs font-semibold gold-text tracking-widest uppercase">The Bio-Optimisation Pulse</span>
+                    <h3 class="serif text-3xl">The 10-Day Cycle</h3>
+                </div>
+                
+                <!-- Updated Social Readiness Legend -->
+                <div class="mt-4 md:mt-0 bg-white border border-gray-100 rounded-lg p-2 flex gap-4 text-[10px] text-gray-500">
+                    <div class="flex items-center gap-2"><span class="social-dot social-green"></span> Social Ready</div>
+                    <div class="flex items-center gap-2"><span class="social-dot social-amber"></span> 48h Caution</div>
+                    <div class="flex items-center gap-2"><span class="social-dot social-red"></span> 5 to 10 Days Downtime</div>
+                </div>
+            </div>
+
+            <!-- Cycle 1 Header -->
+            <div class="flex items-center gap-4 mb-6">
+                <span class="h-px bg-gray-300 flex-1"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Cycle 1: The Initiation</span>
+                <span class="h-px bg-gray-300 flex-1"></span>
+            </div>
+
+            <div class="week-grid mb-8">
+                <!-- Day 1 -->
+                <div class="card p-6">
+                    <div class="step-number">01</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                            <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 1</span>
+                                <span class="social-dot social-green"></span>
+                            </div>
+                            <span class="time-badge">120 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Deep clearance of Porphyrins/Congestion to open pathways.</p>
+                    </div>
+                </div>
+
+                <!-- Day 11 (Gold) -->
+                <div class="card card-luxury-gold p-6">
+                    <div class="step-number text-luxury-gold">11</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 11</span>
+                                <span class="social-dot social-amber"></span>
+                            </div>
+                            <span class="time-badge">150 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">A Youthful Renewal</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Exosome Load #1</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> First Signal (Repair). 40 Billion Exosomes delivered via Microneedling.</p>
+                    </div>
+                </div>
+
+                <!-- Day 21 -->
+                <div class="card p-6">
+                    <div class="step-number">21</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 21</span>
+                                <span class="social-dot social-green"></span>
+                            </div>
+                            <span class="time-badge">120 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Post-needle polish. Clearing desquamation and debris.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cycle 2 Header -->
+            <div class="flex items-center gap-4 mb-6">
+                <span class="h-px bg-gray-300 flex-1"></span>
+                <span class="text-xs font-bold uppercase tracking-widest gold-text">Cycle 2: The Foundation</span>
+                <span class="h-px bg-gray-300 flex-1"></span>
+            </div>
+
+            <div class="week-grid mb-8">
+                <!-- Day 31 (Gold) -->
+                <div class="card card-luxury-gold p-6">
+                    <div class="step-number text-luxury-gold">31</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 31</span>
+                                <span class="social-dot social-amber"></span>
+                            </div>
+                            <span class="time-badge">150 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">A Youthful Renewal</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Exosome Load #2</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Second Signal (Build). Stacking growth factors.</p>
+                    </div>
+                </div>
+
+                <!-- Day 41 -->
+                <div class="card p-6">
+                    <div class="step-number">41</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 41</span>
+                                <span class="social-dot social-green"></span>
+                            </div>
+                            <span class="time-badge">120 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Hydration Lock. LED therapy to calm inflammation.</p>
+                    </div>
+                </div>
+
+                <!-- Day 51 (Gold) -->
+                <div class="card card-luxury-gold p-6">
+                    <div class="step-number text-luxury-gold">51</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 51</span>
+                                <span class="social-dot social-amber"></span>
+                            </div>
+                            <span class="time-badge">150 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">A Youthful Renewal</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Exosome Load #3</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Third Signal (Densify). Matrix thickening.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cycle 3 Header -->
+            <div class="flex items-center gap-4 mb-6">
+                <span class="h-px bg-gray-300 flex-1"></span>
+                <span class="text-xs font-bold uppercase tracking-widest gold-text">Cycle 3: The Structural Intermission</span>
+                <span class="h-px bg-gray-300 flex-1"></span>
+            </div>
+
+            <div class="week-grid mb-8">
+                <!-- Day 61 (Collagen Gun Highlight - Now Platinum/Silver) -->
+                <div class="card card-platinum p-6">
+                    <div class="step-number text-platinum">61</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-platinum uppercase">Day 61</span>
+                                <span class="social-dot social-green" title="Social Ready"></span>
+                            </div>
+                            <span class="time-badge">150 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-platinum-dark">Mid-Cycle Lift</h4>
+                        <span class="inline-block px-2 py-1 badge-platinum rounded text-[10px] uppercase font-bold my-2">Collagen Gun (Focused Energy)</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Precision tightening for mid-face sagging without downtime.</p>
+                    </div>
+                </div>
+
+                <!-- Day 71 (Gold) -->
+                <div class="card card-luxury-gold p-6">
+                    <div class="step-number text-luxury-gold">71</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 71</span>
+                                <span class="social-dot social-amber"></span>
+                            </div>
+                            <span class="time-badge">150 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">A Youthful Renewal</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Exosome Load #4</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Fourth Signal (Structure). Pits begin to shallow.</p>
+                    </div>
+                </div>
+
+                 <!-- Day 81 -->
+                 <div class="card p-6">
+                    <div class="step-number">81</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 81</span>
+                                <span class="social-dot social-green"></span>
+                            </div>
+                            <span class="time-badge">120 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Assessment of scar depth & oxygenation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cycle 4 Header -->
+            <div class="flex items-center gap-4 mb-6">
+                <span class="h-px bg-gray-300 flex-1"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Cycle 4: The Peak Loading</span>
+                <span class="h-px bg-gray-300 flex-1"></span>
+            </div>
+
+            <div class="week-grid mb-8">
+                 <!-- Day 91 (Gold) -->
+                 <div class="card card-luxury-gold p-6">
+                    <div class="step-number text-luxury-gold">91</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 91</span>
+                                <span class="social-dot social-amber"></span>
+                            </div>
+                            <span class="time-badge">150 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">A Youthful Renewal</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Exosome Load #5</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Fifth Signal (Lift).</p>
+                    </div>
+                </div>
+
+                <!-- Day 101 -->
+                <div class="card p-6">
+                    <div class="step-number">101</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 101</span>
+                                <span class="social-dot social-green"></span>
+                            </div>
+                            <span class="time-badge">120 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Surface polish to ensure texture is ready for final loading.</p>
+                    </div>
+                </div>
+
+                <!-- Day 111 (Gold) -->
+                <div class="card card-luxury-gold p-6">
+                    <div class="step-number text-luxury-gold">111</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 111</span>
+                                <span class="social-dot social-amber"></span>
+                            </div>
+                            <span class="time-badge">150 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">A Youthful Renewal</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Exosome Load #6</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> Max Saturation. Skin is now funded for laser.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transition Header -->
+             <div class="flex items-center gap-4 mb-6">
+                <span class="h-px bg-gray-300 flex-1"></span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Phase 3: Resurfacing</span>
+                <span class="h-px bg-gray-300 flex-1"></span>
+            </div>
+
+            <div class="week-grid">
+                 <!-- Day 121+ (New Rose Theme) -->
+                 <div class="card card-rose p-6 col-span-1 md:col-span-2">
+                    <div class="step-number text-rose">121+</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-rose uppercase">Day 121+</span>
+                                <span class="social-dot social-red" title="48h+ Downtime"></span>
+                            </div>
+                            <span class="time-badge">Trilogy</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-rose">The Architectural Resurfacing</h4>
+                        <span class="inline-block px-2 py-1 badge-rose rounded text-[10px] uppercase font-bold my-2">CO₂ Fractional Laser</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Focus:</strong> With bio-currency fully loaded, we now safely ablate the surface to erase scar edges and shrink wrap texture.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Home Care Protocol -->
         <section id="homecare" class="mb-12">
-            <h3 class="serif text-3xl mb-6">Home Care Protocol</h3>
-            <p class="text-xs text-gray-500 mb-6 uppercase tracking-widest italic">Goal: Model Obsolescence — achieve biological self-sufficiency</p>
+            <h3 class="serif text-3xl mb-6">Home Care Protocol (The Daily Signal)</h3>
             
-            <div class="space-y-4">
-                <div class="card p-5 flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-xs font-bold text-gray-300">01</div>
-                    <div>
-                        <h4 class="font-semibold text-sm">Step 1: Enzyme Wash (AM/PM)</h4>
-                        <p class="text-xs text-gray-500 mt-1">Must use foaming sponge. Non-abrasive daily exfoliation to prevent whitehead recurrence.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Morning Ritual -->
+                <div class="bg-white rounded-xl p-6 border border-gray-200">
+                    <div class="flex items-center gap-2 mb-6 border-b border-gray-100 pb-4">
+                        <svg class="w-5 h-5 gold-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        <h4 class="serif text-lg">Morning Ritual (Protect - The Shield)</h4>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex gap-3">
+                            <span class="text-xs font-bold text-gray-300 mt-1">01</span>
+                            <div>
+                                <h5 class="text-sm font-semibold">Enzyme Wash</h5>
+                                <p class="text-xs text-gray-500">Gentle cleansing of metabolic waste.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="text-xs font-bold text-gray-300 mt-1">02</span>
+                            <div>
+                                <h5 class="text-sm font-semibold">A.G.E Eye Essence</h5>
+                                <p class="text-xs text-gray-500">Applied first to thin tissue (targets puffiness).</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="text-xs font-bold gold-text mt-1">03</span>
+                            <div>
+                                <h5 class="text-sm font-semibold gold-text">The Concentrate</h5>
+                                <p class="text-xs text-gray-500">Bio-Currency Serum (Growth Factors).</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <span class="text-xs font-bold gold-text mt-1">04</span>
+                            <div>
+                                <h5 class="text-sm font-semibold gold-text">Hydragel</h5>
+                                <p class="text-xs text-gray-500">Moisture shield to lock in growth factors.</p>
+                            </div>
+                        </div>
+                         <div class="flex gap-3">
+                            <span class="text-xs font-bold text-gray-300 mt-1">05</span>
+                            <div>
+                                <h5 class="text-sm font-semibold">UV Defence</h5>
+                                <p class="text-xs text-gray-500">Mandatory non-negotiable protection.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card p-5 border-l-4 border-l-gold flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-xs font-bold gold-text">02</div>
-                    <div>
-                        <h4 class="font-semibold text-sm">Step 2: The Resurfacer (AM/PM)</h4>
-                        <p class="text-xs text-gray-500 mt-1 italic font-medium">Critical for Prash.</p>
-                        <p class="text-xs text-gray-500 mt-1">Salicylic Acid penetrates oily pores to melt blackheads; Mushroom extract provides nose pore astringency.</p>
+
+                <!-- Evening Ritual -->
+                <div class="bg-[#1a1a1a] text-white rounded-xl p-6">
+                    <div class="flex items-center gap-2 mb-6 border-b border-gray-700 pb-4">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                        <h4 class="serif text-lg">Evening Ritual (Correct - The Blueprint)</h4>
+                    </div>
+                    
+                    <div class="space-y-4">
+                         <div class="flex gap-3">
+                            <span class="text-xs font-bold text-gray-600 mt-1">01</span>
+                            <div>
+                                <h5 class="text-sm font-semibold">Enzyme Wash</h5>
+                                <p class="text-xs text-gray-400">Double cleanse.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Alternating Step -->
+                        <div class="p-3 bg-gray-800 rounded border border-gray-700">
+                            <span class="text-[10px] uppercase tracking-widest text-gold mb-2 block">Alternating Actives</span>
+                            <div class="flex gap-3 mb-2">
+                                <span class="text-xs font-bold gold-text mt-1">A</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold">The Resurfacer</h5>
+                                    <p class="text-[10px] text-gray-400">Nights 1 & 4. Decongestant for Pores.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span class="text-xs font-bold gold-text mt-1">B</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold gold-text">Youth Booster</h5>
+                                    <p class="text-[10px] text-gray-400">Nights 2 & 5. Retinol + EGF.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                         <div class="flex gap-3">
+                            <span class="text-xs font-bold gold-text mt-1">03</span>
+                            <div>
+                                <h5 class="text-sm font-semibold gold-text">The Essential</h5>
+                                <p class="text-xs text-gray-400">Lipid Restore. Every night.</p>
+                            </div>
+                        </div>
+
+                        <!-- SOS Item -->
+                        <div class="mt-4 pt-4 border-t border-gray-700">
+                             <div class="flex gap-3">
+                                <span class="text-xs font-bold text-red-400 mt-1">SOS</span>
+                                <div>
+                                    <h5 class="text-sm font-semibold text-red-400">The Healer</h5>
+                                    <p class="text-xs text-gray-400">Use ONLY for 48h post-procedure to calm acute trauma.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="card p-5 flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-xs font-bold text-gray-300">03</div>
-                    <div>
-                        <h4 class="font-semibold text-sm">Step 3: The Healer (AM)</h4>
-                        <p class="text-xs text-gray-500 mt-1">Soothes oil gland sensitivity and reduces congestion-related inflammation.</p>
+
+            </div>
+        </section>
+
+        <!-- Internal Architecture (Holistic) -->
+        <section id="nutraceuticals" class="mb-12">
+            <h3 class="serif text-3xl mb-6">Internal Architecture (Holistic Longevity)</h3>
+            <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="relative pl-6 border-l-2 border-gray-200">
+                        <h4 class="serif text-lg text-gray-900 mb-2">System Regulation</h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Supplements</p>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-2">
+                            <strong>Magnesium Glycinate (400mg):</strong> Take post-dinner to address Critical Sleep (2/5) and lower cortisol.
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <strong>Zinc Picolinate:</strong> To support tissue healing and reduce "Porphyrin" load.
+                        </p>
                     </div>
-                </div>
-                <div class="card p-5 flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-xs font-bold text-gray-300">04</div>
-                    <div>
-                        <h4 class="font-semibold text-sm">Step 4: The Youth Booster (PM)</h4>
-                        <p class="text-xs text-gray-500 mt-1">Retinol Complex to accelerate turnover, resurfacing scars from the bottom up.</p>
+                    <!-- Item 2 -->
+                    <div class="relative pl-6 border-l-2 border-gold">
+                        <h4 class="serif text-lg text-gray-900 mb-2">Energy Flow</h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">TCM & Acupuncture</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Weekly Acupuncture is advised to down-regulate "High Stress" (4/5). Consult a practitioner to clear "Damp Heat" (Liver Qi Stagnation).
+                        </p>
                     </div>
-                </div>
-                <div class="card p-5 flex items-start gap-4">
-                    <div class="w-10 h-10 rounded-full border border-gray-100 flex items-center justify-center text-xs font-bold text-gray-300">05</div>
-                    <div>
-                        <h4 class="font-semibold text-sm">Step 5: The Essential (AM/PM)</h4>
-                        <p class="text-xs text-gray-500 mt-1">The "Airy" finish is vital for Hong Kong humidity; provides a matte shield without clogging pores.</p>
+                    <!-- Item 3 -->
+                    <div class="relative pl-6 border-l-2 border-gray-200">
+                        <h4 class="serif text-lg text-gray-900 mb-2">Substrate</h4>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Protein & Water</p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Maintain 1g/kg protein intake. High water intake is crucial to flush lymphatics during Exosome loading.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -309,72 +751,76 @@
         <!-- Golden Rules -->
         <section id="rules" class="mb-12">
             <div class="bg-[#1a1a1a] text-white rounded-xl p-8">
-                <h3 class="serif text-2xl mb-6 text-white border-b border-gray-700 pb-4">Clinical "Golden Rules"</h3>
+                <h3 class="serif text-2xl mb-6 text-white border-b border-gray-700 pb-4">Protocol "Golden Rules"</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
-                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">Preparation</h5>
-                        <p class="text-xs leading-relaxed text-gray-300"><strong>The Clean Slate Rule:</strong> Area must be clean-shaven. Stubble acts as a barrier, singeing hair rather than remodelling the dermis.</p>
+                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The Alcohol Restriction</h5>
+                        <p class="text-xs leading-relaxed text-gray-300">Absolute restriction <strong>48 hours before/after</strong> Exosome sessions. Alcohol depletes NAD+, blocking exosome signaling.</p>
                     </div>
                     <div>
-                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">Substance Restriction</h5>
-                        <p class="text-xs leading-relaxed text-gray-300"><strong>No Alcohol:</strong> Avoid for 5 days post-laser. Alcohol dehydrates the skin required for Exosomes to signal repair.</p>
+                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The Clean Shave Mandate</h5>
+                        <p class="text-xs leading-relaxed text-gray-300">Facial hair acts as a barrier to laser energy and microneedles. You <strong>must be clean shaven</strong> on the morning of every treatment day.</p>
                     </div>
                     <div>
-                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">Product Suspension</h5>
-                        <p class="text-xs leading-relaxed text-gray-300">Suspend <strong>The Resurfacer</strong> 24h before and 48h after laser to prevent over-sensitisation.</p>
+                         <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The Sleep Mandate</h5>
+                        <p class="text-xs leading-relaxed text-gray-300">"Poor Sleep" (2/5) is your bottleneck. You must prioritize the "Repair Cycle" (10PM-2AM) for this protocol to work.</p>
                     </div>
                     <div>
-                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The 10-Day Rule</h5>
-                        <p class="text-xs leading-relaxed text-gray-300">The <strong>Gradual Rebirth</strong> every 10 days is non-negotiable. Hardened whiteheads reflect laser energy, reducing efficacy.</p>
+                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The Heat Spike Rule</h5>
+                        <p class="text-xs leading-relaxed text-gray-300">Avoid saunas, steam rooms, and <strong>high-intensity cardio</strong> for 48 hours post-procedure to prevent vascular dilation.</p>
                     </div>
-                </div>
-                <div class="mt-8 pt-6 border-t border-gray-700">
-                    <p class="text-[10px] text-gray-500 text-center uppercase tracking-widest">Clinical Protocol Version 2.4 | TiN5 Skin Longevity</p>
                 </div>
             </div>
         </section>
 
+        <!-- Professional Footer -->
+        <footer class="border-t border-gray-200 pt-8 mt-12 mb-20 text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                <div>
+                    <h5 class="font-serif font-bold text-lg mb-2">TiN5</h5>
+                    <p class="text-xs text-gray-500">Advanced Skin Architecture & Longevity</p>
+                </div>
+                
+                <div class="text-xs text-gray-500 space-y-1">
+                    <p><strong>Prepared By:</strong> TiN5 Skin Architect</p>
+                    <p><strong>Date:</strong> February 07, 2026</p>
+                    <p><strong>Report ID:</strong> T5-PRD-2026</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-[10px] text-gray-400 leading-relaxed text-justify">
+                <strong>DISCLAIMER:</strong> This Skin Architecture Report is a cosmetic guidance document designed to support skin health and aesthetic longevity. It does not constitute a medical diagnosis, treatment plan, or prescription. The suggestions regarding "Internal Architecture" (supplements, TCM) are for wellness optimization only. Please consult with your primary care physician before beginning any new regimen.
+            </div>
+        </footer>
+
     </main>
 
-    <!-- Mobile Navigation Bar -->
+    <!-- Mobile Nav -->
     <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-3 flex justify-between items-center z-[100] sm:hidden">
         <a href="#assessment" class="flex flex-col items-center gap-1 nav-active">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
             <span class="text-[0.6rem] font-medium">Report</span>
         </a>
         <a href="#program" class="flex flex-col items-center gap-1 text-gray-400">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span class="text-[0.6rem] font-medium">Program</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <span class="text-[0.6rem] font-medium">Protocol</span>
         </a>
         <a href="#homecare" class="flex flex-col items-center gap-1 text-gray-400">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
             <span class="text-[0.6rem] font-medium">Home Care</span>
         </a>
         <a href="#rules" class="flex flex-col items-center gap-1 text-gray-400">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
             <span class="text-[0.6rem] font-medium">Safety</span>
         </a>
     </nav>
 
     <script>
-        // Simple scroll spy for mobile nav
         document.querySelectorAll('nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                
-                // Update UI state
+                document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
                 document.querySelectorAll('nav a').forEach(a => a.classList.replace('nav-active', 'text-gray-400'));
                 this.classList.replace('text-gray-400', 'nav-active');
             });
