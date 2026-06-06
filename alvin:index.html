@@ -39,7 +39,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            position: relative; /* Context for absolute positioning */
+            position: relative; 
         }
 
         /* --- Highlight Themes --- */
@@ -57,20 +57,7 @@
             border: 1px solid #fde047;
         }
 
-        /* Theme: Pale Orange Glow (Collagen Gun) */
-        .card-pale-orange {
-            background: linear-gradient(145deg, #ffffff 0%, #fff7ed 100%);
-            border: 1px solid #ffedd5; 
-            box-shadow: 0 0 15px rgba(251, 146, 60, 0.15); 
-        }
-        .text-pale-orange { color: #c2410c; } 
-        .badge-pale-orange {
-            background-color: #fff7ed;
-            color: #c2410c;
-            border: 1px solid #ffedd5;
-        }
-
-        /* Theme: Luxury Gold POP (Gold RF) */
+        /* Theme: Luxury Gold POP (Sellas / Scarlet RF) */
         .card-luxury-gold {
             background: linear-gradient(135deg, #FFFFFF 0%, #fffdf5 100%);
             border: 2px solid #D4AF37; 
@@ -84,12 +71,19 @@
             color: #997B3D;
             border: 1px solid #E6D2A0;
         }
-        
-        /* Theme: Cellular Reset (A Gradual Rebirth) */
-        .badge-prep {
-            background-color: #F3F4F6;
-            color: #4B5563;
-            border: 1px solid #E5E7EB;
+
+        /* Theme: Structural Platinum (Exosome Seal) */
+        .card-platinum {
+            background: #F8FAFC; 
+            border: 1px solid #CBD5E1; 
+            box-shadow: 0 0 20px rgba(148, 163, 184, 0.3);
+        }
+        .text-platinum { color: #475569; } 
+        .text-platinum-dark { color: #334155; } 
+        .badge-platinum {
+            background-color: #E2E8F0;
+            color: #475569;
+            border: 1px solid #CBD5E1;
         }
 
         /* --------------------------- */
@@ -105,7 +99,6 @@
         }
         .nav-active { color: var(--tin5-gold); }
         
-        /* Watermark Step Number */
         .step-number {
             font-family: 'Playfair Display', serif;
             font-size: 5rem;
@@ -135,7 +128,6 @@
             }
         }
 
-        /* Social Readiness Dots */
         .social-dot {
             height: 8px;
             width: 8px;
@@ -153,14 +145,12 @@
             border-radius: 99px;
             overflow: hidden;
         }
-        /* Target Fill (Gold) - Sits underneath */
         .score-bar-fill-target {
             height: 100%;
             background-color: var(--tin5-gold);
             border-radius: 99px;
             z-index: 1;
         }
-        /* Current Fill (Grey) - Sits on top */
         .score-bar-fill-current {
             height: 100%;
             background-color: #94a3b8;
@@ -183,15 +173,15 @@
             border-color: #fde047;
             color: #854d0e;
         }
-        .card-pale-orange .time-badge {
-            background-color: #fff7ed;
-            border-color: #ffedd5;
-            color: #c2410c;
-        }
         .card-luxury-gold .time-badge {
             background-color: #fffbeb;
             border-color: #fcd34d;
             color: #b45309;
+        }
+        .card-platinum .time-badge {
+            background-color: #f1f5f9;
+            border-color: #cbd5e1;
+            color: #64748b;
         }
         
         .t-zone-box {
@@ -247,7 +237,7 @@
             </div>
             <div class="text-right">
                 <div class="h-6 ml-auto font-serif font-bold text-xl tracking-tighter">TiN5</div>
-                <span class="text-[0.6rem] font-mono opacity-50">ID: T5-AL-2026-PH3</span>
+                <span class="text-[0.6rem] font-mono opacity-50">ID: T5-AL-2026-PH3.2</span>
             </div>
         </div>
     </header>
@@ -274,31 +264,19 @@
                     <div class="md:w-2/3 flex flex-col w-full">
                         <div class="mb-6">
                             <span class="status-badge bg-amber-50 text-amber-600 mb-3">Correctional Priority</span>
-                            <h4 class="font-semibold text-xl mb-2">Deflated-Vascular Architecture</h4>
+                            <h4 class="font-semibold text-xl mb-2">Reactive-Sebaceous Architecture</h4>
                             <p class="text-sm text-gray-600 leading-relaxed">
-                                "Alvin, we have analyzed your latest scan against your 12-month history. While your 'Exosome Saturation' is high (excellent collagen density), the scan reveals a discrepancy: your structural volume has shifted (causing sagging and puffy eyes), yet your vascular network remains reactive (redness). This creates a 'Deflated-Vascular' architecture. <br><br>
-                                We are shifting from 'Repair' to 'Correction'. Your high Sleep Score (4/5) and Protein intake allow us to accelerate your frequency to every 10 days. The logic is to mechanically lift the frame (Collagen Gun/RF) while buffering the vascular noise (Gradual Rebirth)."
+                                "Alvin, your latest scan confirms that Phase 1 and 2 have done their foundational work — your matrix density is strong. However, the biological map now reveals two dominant signals that require precise correction. First, your vascular network remains reactive: diffuse redness and post-inflammatory erythema are actively depositing across the mid-face. Second, your sebaceous architecture is in overdrive: the Wood's Lamp scan shows dense sebum fluorescence across the entire T-zone, driving follicular congestion, enlarged pores, and the early formation of post-inflammatory hyperpigmentation. <br><br>
+                                These two systems — vascular reactivity and sebaceous overactivity — are feeding each other in a loop. We are now engineering a protocol that interrupts that loop: calming the vascular noise with sequential Gradual Rebirth resets, resurfacing the congested follicular openings with Sellas, and using Scarlet RF's perifollicular thermal energy to physically contract the pore architecture and suppress sebaceous output at the gland level. Your Sleep Score (4/5), managed stress, and low alcohol ensure your biological environment is primed for this correction."
                             </p>
                         </div>
                         
                         <!-- Biometric Scorecard -->
                         <div class="bg-gray-50 rounded-lg p-5 border border-gray-100">
-                            <h5 class="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest mb-4">Baseline vs. 2026 Target</h5>
+                            <h5 class="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest mb-4">Baseline vs. Target Metrics</h5>
                             
                             <div class="space-y-4">
                                 <!-- Metric 1 -->
-                                <div>
-                                    <div class="flex justify-between text-xs mb-1">
-                                        <span class="font-medium text-gray-600">Matrix Density</span>
-                                        <span class="text-gray-400">Current: 9/10 <span class="mx-1">→</span> <span class="gold-text font-bold">Status: OPTIMIZED</span></span>
-                                    </div>
-                                    <div class="score-bar-bg relative">
-                                        <div class="score-bar-fill-target absolute top-0 left-0" style="width: 90%"></div>
-                                        <div class="score-bar-fill-current absolute top-0 left-0" style="width: 90%"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Metric 2 -->
                                 <div>
                                     <div class="flex justify-between text-xs mb-1">
                                         <span class="font-medium text-gray-600">Vascular Resilience</span>
@@ -310,14 +288,26 @@
                                     </div>
                                 </div>
 
+                                <!-- Metric 2 -->
+                                <div>
+                                    <div class="flex justify-between text-xs mb-1">
+                                        <span class="font-medium text-gray-600">Pore Refinement</span>
+                                        <span class="text-gray-400">Current: 3/10 <span class="mx-1">→</span> <span class="gold-text font-bold">Target: 7/10</span></span>
+                                    </div>
+                                    <div class="score-bar-bg relative">
+                                        <div class="score-bar-fill-target absolute top-0 left-0" style="width: 70%"></div>
+                                        <div class="score-bar-fill-current absolute top-0 left-0" style="width: 30%"></div>
+                                    </div>
+                                </div>
+
                                 <!-- Metric 3 -->
                                 <div>
                                     <div class="flex justify-between text-xs mb-1">
-                                        <span class="font-medium text-gray-600">Structural Tensility (Lift)</span>
-                                        <span class="text-gray-400">Current: 4/10 <span class="mx-1">→</span> <span class="gold-text font-bold">Target: 9/10</span></span>
+                                        <span class="font-medium text-gray-600">Melanin Uniformity</span>
+                                        <span class="text-gray-400">Current: 4/10 <span class="mx-1">→</span> <span class="gold-text font-bold">Target: 7/10</span></span>
                                     </div>
                                     <div class="score-bar-bg relative">
-                                        <div class="score-bar-fill-target absolute top-0 left-0" style="width: 90%"></div>
+                                        <div class="score-bar-fill-target absolute top-0 left-0" style="width: 70%"></div>
                                         <div class="score-bar-fill-current absolute top-0 left-0" style="width: 40%"></div>
                                     </div>
                                 </div>
@@ -359,24 +349,24 @@
                         </tr>
                         <!-- Phase 3: Cycle 1 -->
                         <tr>
-                            <td class="p-4"><span class="block font-semibold text-gray-900">Phase 3: Cycle 1</span></td>
-                            <td class="p-4 text-center"><span class="text-[10px] font-bold uppercase text-gray-900 bg-gray-100 px-2 py-1 rounded">Days 1–40</span></td>
-                            <td class="p-4 text-center"><span class="block text-xs text-gray-900">Foundation & Lock</span></td>
-                            <td class="p-4 text-xs text-gray-600">Youthful Renewal ➔ Collagen Gun ➔ Scarlet RF.</td>
+                            <td class="p-4"><span class="block font-semibold text-gray-900">Phase 3 Cycle 1</span></td>
+                            <td class="p-4 text-center"><span class="text-[10px] font-bold uppercase text-gray-900 bg-gray-100 px-2 py-1 rounded">Days 1–41</span></td>
+                            <td class="p-4 text-center"><span class="block text-xs text-gray-900">Calm, Reset & Prime</span></td>
+                            <td class="p-4 text-xs text-gray-600">A Gradual Rebirth ➔ Youthful Renewal ➔ Sellas</td>
                         </tr>
                         <!-- Phase 3: Cycle 2 -->
                         <tr>
-                            <td class="p-4"><span class="block font-semibold text-gray-900">Phase 3: Cycle 2</span></td>
-                            <td class="p-4 text-center"><span class="text-[10px] gold-text font-bold uppercase">Days 50–80</span></td>
-                            <td class="p-4 text-center"><span class="block text-xs text-gray-900">Contour Amplification</span></td>
-                            <td class="p-4 text-xs text-gray-600">Alternating Cellular Resets, Collagen Gun, and Scarlet RF.</td>
+                            <td class="p-4"><span class="block font-semibold text-gray-900">Phase 3 Cycle 2</span></td>
+                            <td class="p-4 text-center"><span class="text-[10px] gold-text font-bold uppercase">Days 51–101</span></td>
+                            <td class="p-4 text-center"><span class="block text-xs text-gray-900">Resurface & Regulate</span></td>
+                            <td class="p-4 text-xs text-gray-600">Sequential Resets building to Scarlet RF sebaceous correction and Pico laser pigment shattering.</td>
                         </tr>
                         <!-- Phase 3: Cycle 3 -->
                         <tr>
-                            <td class="p-4"><span class="block font-semibold text-gray-900">Phase 3: Cycle 3</span></td>
-                            <td class="p-4 text-center"><span class="text-[10px] gold-text font-bold uppercase">Days 90–120</span></td>
-                            <td class="p-4 text-center"><span class="block text-xs text-gray-900">Structural Lock</span></td>
-                            <td class="p-4 text-xs text-gray-600">Final lifting pass to seal the 2026 architecture.</td>
+                            <td class="p-4"><span class="block font-semibold text-gray-900">Phase 3 Cycle 3</span></td>
+                            <td class="p-4 text-center"><span class="text-[10px] gold-text font-bold uppercase">Days 111–120</span></td>
+                            <td class="p-4 text-center"><span class="block text-xs text-gray-900">Pigment Correction & Seal</span></td>
+                            <td class="p-4 text-xs text-gray-600">Post-laser recovery + final Exosome seal to lock resurfacing gains.</td>
                         </tr>
                         <!-- Phase 4 (Future) -->
                         <tr class="future-phase">
@@ -402,105 +392,106 @@
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-6 border-b border-gray-200 pb-4">
                 <div>
                     <span class="text-xs font-semibold gold-text tracking-widest uppercase">The Protocol</span>
-                    <h3 class="serif text-3xl">The 10-Day Signal Pulse</h3>
+                    <h3 class="serif text-3xl">The Variable Signal Pulse</h3>
                 </div>
                 
                 <div class="mt-4 md:mt-0 bg-white border border-gray-100 rounded-lg p-2 flex gap-4 text-[10px] text-gray-500">
                     <div class="flex items-center gap-2"><span class="social-dot social-green"></span> Social Ready</div>
                     <div class="flex items-center gap-2"><span class="social-dot social-amber"></span> 24h Caution</div>
+                    <div class="flex items-center gap-2"><span class="social-dot social-red"></span> 48h Downtime</div>
                 </div>
             </div>
 
             <!-- Cycle 1 Header -->
             <div class="flex items-center gap-4 mb-6">
                 <span class="h-px bg-gray-300 flex-1"></span>
-                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Cycle 1: The Foundation (Days 1–40)</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-gray-400">Cycle 1: The Foundation (Days 1–41)</span>
                 <span class="h-px bg-gray-300 flex-1"></span>
             </div>
 
             <div class="week-grid mb-8">
-                <!-- Day 01 -->
-                <div class="card card-pale-yellow p-6">
-                    <div class="step-number text-pale-yellow">01</div>
+                <!-- Session 01 - Day 01 -->
+                <div class="card p-6">
+                    <div class="step-number">01</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-pale-yellow uppercase">Day 01</span>
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 01</span>
+                                <span class="social-dot social-green"></span>
+                            </div>
+                            <span class="time-badge">120 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <span class="inline-block px-2 py-1 bg-gray-100 text-gray-500 rounded text-[10px] uppercase font-bold my-2">Baseline Calibration</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Priority reset. Deep cleanse and LED infusion reduce mid-face inflammatory load. We calm the reactive canvas before initiating active signal work.</p>
+                    </div>
+                </div>
+
+                <!-- Session 02 - Day 11 -->
+                <div class="card card-pale-yellow p-6">
+                    <div class="step-number text-pale-yellow">02</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-pale-yellow uppercase">Day 11</span>
                                 <span class="social-dot social-amber"></span>
                             </div>
                             <span class="time-badge">150 mins</span>
                         </div>
                         <h4 class="serif text-lg font-medium mt-1 text-pale-yellow">A Youthful Renewal</h4>
                         <span class="inline-block px-2 py-1 badge-pale-yellow rounded text-[10px] uppercase font-bold my-2">Exosome Load #1</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Initial 40B Exosome saturation to thicken capillary walls, 'seal' redness, and increase matrix density before starting the heavy lifting cycles.</p>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> First 40B Exosome saturation into a calmed baseline. Thickens capillary walls to seal vascular reactivity, while growth factors initiate perifollicular collagen remodelling.</p>
                     </div>
                 </div>
 
-                <!-- Day 10 -->
+                <!-- Session 03 - Day 21 -->
                 <div class="card p-6">
-                    <div class="step-number">02</div>
+                    <div class="step-number">03</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 10</span>
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 21</span>
                                 <span class="social-dot social-green"></span>
                             </div>
                             <span class="time-badge">120 mins</span>
                         </div>
                         <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
                         <span class="inline-block px-2 py-1 badge-prep rounded text-[10px] uppercase font-bold my-2">Cellular Reset #1</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Clearing metabolic waste. A maintenance session to ensure the 'Canvas' is clean and the barrier is soothed following the Exosome load.</p>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Post-exosome barrier maintenance. Enzymatic clearance and LED soothing consolidate exosome signals, keeping the canvas clean for upcoming resurfacing.</p>
                     </div>
                 </div>
 
-                <!-- Day 20 -->
-                <div class="card card-pale-orange p-6">
-                    <div class="step-number text-pale-orange">03</div>
-                    <div class="content-layer mb-4">
-                        <div class="flex justify-between items-center mb-1">
-                             <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-pale-orange uppercase">Day 20</span>
-                                <span class="social-dot social-green"></span>
-                            </div>
-                            <span class="time-badge">150 mins</span>
-                        </div>
-                        <h4 class="serif text-lg font-medium mt-1 text-pale-orange">Collagen Gun + 10B Exosomes</h4>
-                        <span class="inline-block px-2 py-1 badge-pale-orange rounded text-[10px] uppercase font-bold my-2">Structural Lift #1</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Snap-Back Plumping. We deliver targeted mechanical energy to lift the newly densified tissue and define contours without inducing thermal redness.</p>
-                    </div>
-                </div>
-
-                <!-- Day 30 -->
+                <!-- Session 04 - Day 31 -->
                 <div class="card p-6">
                     <div class="step-number">04</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 30</span>
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 31</span>
                                 <span class="social-dot social-green"></span>
                             </div>
                             <span class="time-badge">120 mins</span>
                         </div>
-                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth + 10B Exosomes</h4>
-                        <span class="inline-block px-2 py-1 badge-prep rounded text-[10px] uppercase font-bold my-2">Cellular Reset #2 | Exosome Prime</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Deep pore detox combined with a 10B Exosome infusion to 'prime' the dermal workers ahead of the upcoming Scarlet RF structural lock.</p>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <span class="inline-block px-2 py-1 badge-prep rounded text-[10px] uppercase font-bold my-2">Cellular Reset #2</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Sebum clearance pass. Deep cleanse targets T-zone follicular congestion, priming architecture for Sellas resurfacing to maximize laser penetration and reduce purging.</p>
                     </div>
                 </div>
 
-                <!-- Day 40 (Gold Glow) -->
+                <!-- Session 05 - Day 41 (Gold Glow) -->
                 <div class="card card-luxury-gold p-6 md:col-span-2">
                     <div class="step-number text-luxury-gold">05</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 40</span>
-                                <span class="social-dot social-amber"></span>
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 41</span>
+                                <span class="social-dot social-red"></span>
                             </div>
                             <span class="time-badge">150 mins</span>
                         </div>
-                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">Scarlet RF "Golden" (Na Effect)</h4>
-                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Structural Lock #1</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Foundation Tightening. Targeting the basement membrane (Na Effect). This is critical for tightening the orbital septum to correct 'puffy eyes' and locking the Collagen Gun lift in place.</p>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">Sellas Laser</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Resurfacing Pass #1</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> First Sellas pass targets follicular roughness and PIE. The regenerative stack (Exosomes, PDRN, Senolytics, NAD+) accelerates epidermal recovery and suppresses post-laser inflammatory rebound.</p>
                     </div>
                 </div>
             </div>
@@ -508,153 +499,154 @@
             <!-- Cycle 2 Header -->
             <div class="flex items-center gap-4 mb-6">
                 <span class="h-px bg-gray-300 flex-1"></span>
-                <span class="text-xs font-bold uppercase tracking-widest gold-text">Cycle 2: The Amplification (Days 50–80)</span>
+                <span class="text-xs font-bold uppercase tracking-widest gold-text">Cycle 2: Resurface & Regulate (Days 51–101)</span>
                 <span class="h-px bg-gray-300 flex-1"></span>
             </div>
 
             <div class="week-grid mb-8">
-                <!-- Day 50 -->
+                <!-- Session 06 - Day 51 -->
                 <div class="card p-6">
                     <div class="step-number">06</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 50</span>
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 51</span>
                                 <span class="social-dot social-green"></span>
                             </div>
                             <span class="time-badge">120 mins</span>
                         </div>
                         <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
-                        <span class="inline-block px-2 py-1 badge-prep rounded text-[10px] uppercase font-bold my-2">Cellular Reset #3</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Thermal Release. 'The Healer' infusion ensures absolutely no heat remains in the tissue from the RF session, maintaining the 'Calm' baseline.</p>
+                        <span class="inline-block px-2 py-1 bg-gray-100 text-gray-500 rounded text-[10px] uppercase font-bold my-2">Post-Laser Recovery</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Post-Sellas thermal release. LED red light accelerates turnover, and calming actives restore the barrier, ensuring zero residual inflammation before the next load.</p>
                     </div>
                 </div>
 
-                <!-- Day 60 -->
-                <div class="card card-pale-orange p-6">
-                    <div class="step-number text-pale-orange">07</div>
+                <!-- Session 07 - Day 61 -->
+                <div class="card card-pale-yellow p-6">
+                    <div class="step-number text-pale-yellow">07</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-pale-orange uppercase">Day 60</span>
-                                <span class="social-dot social-green"></span>
+                                <span class="text-[0.65rem] font-bold text-pale-yellow uppercase">Day 61</span>
+                                <span class="social-dot social-amber"></span>
                             </div>
                             <span class="time-badge">150 mins</span>
                         </div>
-                        <h4 class="serif text-lg font-medium mt-1 text-pale-orange">Collagen Gun + 10B Exosomes</h4>
-                        <span class="inline-block px-2 py-1 badge-pale-orange rounded text-[10px] uppercase font-bold my-2">Structural Lift #2</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Contour Definition. Second round of focused energy to specifically sculpt the jawline and mid-face volume.</p>
+                        <h4 class="serif text-lg font-medium mt-1 text-pale-yellow">A Youthful Renewal</h4>
+                        <span class="inline-block px-2 py-1 badge-pale-yellow rounded text-[10px] uppercase font-bold my-2">Exosome Load #2</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Second 40B Exosome saturation via microneedling directly targets sebaceous architecture and atrophic beds. PDRN, Senolytics, and NAD+ amplify matrix rebuilding.</p>
                     </div>
                 </div>
 
-                <!-- Day 70 -->
+                <!-- Session 08 - Day 75 -->
                 <div class="card p-6">
                     <div class="step-number">08</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 70</span>
-                                <span class="social-dot social-green"></span>
-                            </div>
-                            <span class="time-badge">120 mins</span>
-                        </div>
-                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth + 10B Exosomes</h4>
-                        <span class="inline-block px-2 py-1 badge-prep rounded text-[10px] uppercase font-bold my-2">Cellular Reset #4 | Exosome Prime</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> SMAS Settling + Pre-Loading. Gentle massage to allow the muscle layer to integrate the lift, while infusing exosomes for the next RF phase.</p>
-                    </div>
-                </div>
-
-                <!-- Day 80 (Gold Glow) -->
-                <div class="card card-luxury-gold p-6">
-                    <div class="step-number text-luxury-gold">09</div>
-                    <div class="content-layer mb-4">
-                        <div class="flex justify-between items-center mb-1">
-                             <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 80</span>
-                                <span class="social-dot social-amber"></span>
-                            </div>
-                            <span class="time-badge">150 mins</span>
-                        </div>
-                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">Scarlet RF "Golden" (Na Effect)</h4>
-                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Structural Lock #2</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Amplification Tightening. Deepening the structural matrix lock and further reducing the appearance of eye bloat.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cycle 3 Header -->
-            <div class="flex items-center gap-4 mb-6">
-                <span class="h-px bg-gray-300 flex-1"></span>
-                <span class="text-xs font-bold uppercase tracking-widest gold-text">Cycle 3: The Final Lock (Days 90–120)</span>
-                <span class="h-px bg-gray-300 flex-1"></span>
-            </div>
-
-            <div class="week-grid">
-                <!-- Day 90 -->
-                <div class="card p-6">
-                    <div class="step-number">10</div>
-                    <div class="content-layer mb-4">
-                        <div class="flex justify-between items-center mb-1">
-                             <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 90</span>
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 75</span>
                                 <span class="social-dot social-green"></span>
                             </div>
                             <span class="time-badge">120 mins</span>
                         </div>
                         <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
-                        <span class="inline-block px-2 py-1 badge-prep rounded text-[10px] uppercase font-bold my-2">Cellular Reset #5</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Thermal Release. Cooling the skin post-RF and re-establishing maximum barrier hydration.</p>
+                        <span class="inline-block px-2 py-1 badge-prep rounded text-[10px] uppercase font-bold my-2">Pre-RF Buffer Reset</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Pre-RF buffer session. Ensures the epidermal barrier is intact, inflammation is at baseline, and perifollicular collagen is primed for maximum thermal contraction.</p>
                     </div>
                 </div>
 
-                <!-- Day 100 -->
-                <div class="card card-pale-orange p-6">
-                    <div class="step-number text-pale-orange">11</div>
+                <!-- Session 09 - Day 85 (Gold Glow) -->
+                <div class="card card-luxury-gold p-6">
+                    <div class="step-number text-luxury-gold">09</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-pale-orange uppercase">Day 100</span>
-                                <span class="social-dot social-green"></span>
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 85</span>
+                                <span class="social-dot social-amber"></span>
                             </div>
                             <span class="time-badge">150 mins</span>
                         </div>
-                        <h4 class="serif text-lg font-medium mt-1 text-pale-orange">Collagen Gun + 10B Exosomes</h4>
-                        <span class="inline-block px-2 py-1 badge-pale-orange rounded text-[10px] uppercase font-bold my-2">Structural Lift #3</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Final Plumping. The third round of mechanical lifting to finalize jawline contouring and combat deflated volume.</p>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">Scarlet 24k</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Sebaceous Contraction #1</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Primary sebaceous correction. Scarlet RF microneedles contract perifollicular dermis and suppress sebum. The infusion stack (Exosomes, PDRN, Senolytics, NAD+) buffers thermal stress.</p>
                     </div>
                 </div>
 
-                <!-- Day 110 -->
+                <!-- Session 10 - Day 95 -->
+                <div class="card p-6">
+                    <div class="step-number">10</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 95</span>
+                                <span class="social-dot social-green"></span>
+                            </div>
+                            <span class="time-badge">120 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <span class="inline-block px-2 py-1 bg-gray-100 text-gray-500 rounded text-[10px] uppercase font-bold my-2">Thermal Release #2</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Post-Scarlet cooling and consolidation. Enzymatic cleanse clears purging debris triggered by sebaceous contraction, followed by LED to maintain vascular calm.</p>
+                    </div>
+                </div>
+
+                <!-- Session 11 - Day 101 (Gold Glow) -->
+                <div class="card card-luxury-gold p-6">
+                    <div class="step-number text-luxury-gold">11</div>
+                    <div class="content-layer mb-4">
+                        <div class="flex justify-between items-center mb-1">
+                             <div class="flex items-center gap-3">
+                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 101</span>
+                                <span class="social-dot social-red"></span>
+                            </div>
+                            <span class="time-badge">150 mins</span>
+                        </div>
+                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">Pico Laser</h4>
+                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Pigment Shattering</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Pico photoacoustically shatters remaining PIH without thermal damage. The full regenerative stack (Exosomes, PDRN, Senolytics, NAD+) suppresses melanocyte rebound and powers DNA-level cellular repair.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cycle 3 Header -->
+            <div class="flex items-center gap-4 mb-6">
+                <span class="h-px bg-gray-300 flex-1"></span>
+                <span class="text-xs font-bold uppercase tracking-widest gold-text">Cycle 3: Pigment Correction & Seal (Days 111–120)</span>
+                <span class="h-px bg-gray-300 flex-1"></span>
+            </div>
+
+            <div class="week-grid">
+                <!-- Session 12 - Day 111 -->
                 <div class="card p-6">
                     <div class="step-number">12</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 110</span>
+                                <span class="text-[0.65rem] font-bold text-gray-400 uppercase">Day 111</span>
                                 <span class="social-dot social-green"></span>
                             </div>
                             <span class="time-badge">120 mins</span>
                         </div>
-                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth + 10B Exosomes</h4>
-                        <span class="inline-block px-2 py-1 badge-prep rounded text-[10px] uppercase font-bold my-2">Cellular Reset #6 | Exosome Prime</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Surface Refinement & Priming. Enzymatic polish to smooth the texture and load the final batch of 'worker' exosomes.</p>
+                        <h4 class="serif text-lg font-medium mt-1">A Gradual Rebirth</h4>
+                        <span class="inline-block px-2 py-1 bg-gray-100 text-gray-500 rounded text-[10px] uppercase font-bold my-2">Post-Laser Recovery #2</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Post-laser barrier restoration. Soothing infusion consolidates resurfacing gains, ensuring the skin is calm, hydrated, and stable ahead of the final seal.</p>
                     </div>
                 </div>
 
-                <!-- Day 120 (Gold Glow) -->
-                <div class="card card-luxury-gold p-6">
-                    <div class="step-number text-luxury-gold">13</div>
+                <!-- Session 13 - Day 120 (Platinum) -->
+                <div class="card card-platinum p-6">
+                    <div class="step-number text-platinum">13</div>
                     <div class="content-layer mb-4">
                         <div class="flex justify-between items-center mb-1">
                              <div class="flex items-center gap-3">
-                                <span class="text-[0.65rem] font-bold text-luxury-gold uppercase">Day 120</span>
+                                <span class="text-[0.65rem] font-bold text-platinum uppercase">Day 120</span>
                                 <span class="social-dot social-amber"></span>
                             </div>
                             <span class="time-badge">150 mins</span>
                         </div>
-                        <h4 class="serif text-lg font-medium mt-1 text-luxury-gold">Scarlet RF "Golden" (Na Effect)</h4>
-                        <span class="inline-block px-2 py-1 badge-luxury-gold rounded text-[10px] uppercase font-bold my-2">Structural Lock #3</span>
-                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> The Ultimate Structural Lock. This final tightening pass seals the accumulated lift and density into a permanent 2026 shape prior to the 120-Day Review.</p>
+                        <h4 class="serif text-lg font-medium mt-1 text-platinum-dark">A Youthful Renewal</h4>
+                        <span class="inline-block px-2 py-1 badge-platinum rounded text-[10px] uppercase font-bold my-2">Exosome Seal — The 2026 Close</span>
+                        <p class="text-sm text-gray-600 mt-2"><strong>Biological Outcome:</strong> Final 40B Exosome saturation seals the 120-day gains. Supercharged with PDRN, Senolytics, and NAD+ to lock in contracted follicular architecture and stable pigment.</p>
                     </div>
                 </div>
 
@@ -664,7 +656,7 @@
         <!-- Home Care Protocol -->
         <section id="homecare" class="mb-12">
             <h3 class="serif text-3xl mb-6">Home Care Architecture (HK Climate Edition)</h3>
-            <p class="text-sm text-gray-600 mb-6"><strong>Concept:</strong> Lightweight hydration for humidity (AM) + Targeted actives for T-Zone oil control (PM).</p>
+            <p class="text-sm text-gray-600 mb-6"><strong>Concept:</strong> Sebum regulation and vascular calm (AM) + Accelerated resurfacing with barrier protection (PM). Every step earns its place.</p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
@@ -672,7 +664,7 @@
                 <div class="bg-white rounded-xl p-6 border border-gray-200">
                     <div class="flex items-center gap-2 mb-6 border-b border-gray-100 pb-4">
                         <svg class="w-5 h-5 gold-text" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                        <h4 class="serif text-lg">AM: Cool, Protect & Drain</h4>
+                        <h4 class="serif text-lg">AM: Regulate, Calm & Protect</h4>
                     </div>
                     
                     <div class="space-y-4">
@@ -680,42 +672,42 @@
                             <span class="text-xs font-bold text-gray-300 mt-1">01</span>
                             <div>
                                 <h5 class="text-sm font-semibold">Enzyme Wash</h5>
-                                <p class="text-xs text-gray-500">Gentle cleansing (Amino Acids).</p>
+                                <p class="text-xs text-gray-500">If face feels oily in the morning, use enzyme wash. The amino acid base removes overnight sebum without stripping — critical for preventing compensatory oil production.</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-xs font-bold gold-text mt-1">02</span>
                             <div>
-                                <h5 class="text-sm font-semibold gold-text">The Healer (Toner)</h5>
-                                <p class="text-xs text-gray-500">Flood skin with Centella to calm redness.</p>
+                                <h5 class="text-sm font-semibold gold-text">The Healer</h5>
+                                <p class="text-xs text-gray-500">Applied as a toner across full face. Ceramide NP begins barrier reinforcement while Centella directly addresses the vascular reactivity visible across mid-face. Non-negotiable for Alvin's profile.</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-xs font-bold gold-text mt-1">03</span>
                             <div>
                                 <h5 class="text-sm font-semibold gold-text">A.G.E Eye Essence</h5>
-                                <p class="text-xs text-gray-500"><strong>Critical:</strong> Tap to manually drain puffiness/fluids.</p>
+                                <p class="text-xs text-gray-500"><strong>Critical:</strong> Tap to manually drain puffiness/fluids. Apply before The Concentrate so actives don't migrate into orbital zone.</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-xs font-bold gold-text mt-1">04</span>
                             <div>
                                 <h5 class="text-sm font-semibold gold-text">The Concentrate</h5>
-                                <p class="text-xs text-gray-500">Full Face & Neck (Growth Factors).</p>
+                                <p class="text-xs text-gray-500">Full face and neck. Growth factors and DNA recovery actives work synergistically with the overnight repair cycle. In morning application, this primes receptors for the day.</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-xs font-bold text-gray-300 mt-1">05</span>
                             <div>
                                 <h5 class="text-sm font-semibold">Hydragel</h5>
-                                <p class="text-xs text-gray-500"><strong>Climate Shield:</strong> Breathable moisture lock.</p>
+                                <p class="text-xs text-gray-500">Lightweight seal for HK humidity. Locks in The Concentrate without adding occlusive weight that would aggravate sebaceous congestion. Do not substitute with a cream.</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-xs font-bold text-gray-300 mt-1">06</span>
                             <div>
                                 <h5 class="text-sm font-semibold">UV Defence</h5>
-                                <p class="text-xs text-gray-500">Mandatory photoprotection.</p>
+                                <p class="text-xs text-gray-500">Mandatory. Post-Sellas and post-Scarlet RF skin is photosensitive. Skipping SPF during this protocol directly undermines Melanin Uniformity targets — UV exposure will redeposit the PIH we are clearing.</p>
                             </div>
                         </div>
                     </div>
@@ -725,7 +717,7 @@
                 <div class="bg-[#1a1a1a] text-white rounded-xl p-6">
                     <div class="flex items-center gap-2 mb-6 border-b border-gray-700 pb-4">
                         <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                        <h4 class="serif text-lg">PM: Correct, Target & Repair</h4>
+                        <h4 class="serif text-lg">PM: Resurface, Target & Repair</h4>
                     </div>
                     
                     <div class="space-y-4">
@@ -733,21 +725,21 @@
                             <span class="text-xs font-bold text-gray-600 mt-1">01</span>
                             <div>
                                 <h5 class="text-sm font-semibold">Enzyme Wash</h5>
-                                <p class="text-xs text-gray-400">Double cleanse.</p>
+                                <p class="text-xs text-gray-400">Double cleanse mandatory on days with sunscreen. The enzyme action begins pre-exfoliation — do not rush this step.</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-xs font-bold text-gray-600 mt-1">02</span>
                             <div>
-                                <h5 class="text-sm font-semibold">The Healer (Toner)</h5>
-                                <p class="text-xs text-gray-400">Calm the barrier.</p>
+                                <h5 class="text-sm font-semibold">The Healer</h5>
+                                <p class="text-xs text-gray-400">Barrier reset after cleansing. Prepares skin for actives without the sensitisation that would occur on a stripped barrier.</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-xs font-bold gold-text mt-1">03</span>
                             <div>
                                 <h5 class="text-sm font-semibold gold-text">The Concentrate</h5>
-                                <p class="text-xs text-gray-400">Serum Step (Full Face & Neck).</p>
+                                <p class="text-xs text-gray-400">Full face and neck. Applied before targeted actives so growth factors penetrate the deeper dermis rather than being blocked by the resurfacing layer above.</p>
                             </div>
                         </div>
                         
@@ -758,9 +750,8 @@
                                 <div>
                                     <h5 class="text-sm font-semibold gold-text">T-ZONE TARGETING</h5>
                                     <p class="text-xs text-gray-400">
-                                        <strong>Night A:</strong> The Resurfacer (Dissolve Blackheads).<br>
-                                        <strong>Night B:</strong> Youth Booster (Tighten Pores).<br>
-                                        <em>Apply only to Forehead, Nose, Chin.</em>
+                                        <strong>Night A / C / E (3× per week):</strong> The Resurfacer — AHA/BHA application to forehead, nose and chin only. Dissolves the follicular congestion that the Wood's Lamp scan shows is still dense across the T-zone. Do not apply to cheeks or perioral zone where the barrier is more reactive.<br><br>
+                                        <strong>Night B / D / F (alternate nights):</strong> Youth Booster — Retinol + EGF to forehead, nose, and chin only. Regulates sebaceous output over time and initiates pore tightening at the retinoid level, working in alignment with the in-clinic Scarlet RF.
                                     </p>
                                 </div>
                             </div>
@@ -770,14 +761,14 @@
                             <span class="text-xs font-bold text-gray-600 mt-1">05</span>
                             <div>
                                 <h5 class="text-sm font-semibold">The Essential</h5>
-                                <p class="text-xs text-gray-400"><strong>U-Zone Only:</strong> Lipids for Cheeks/Jaw/Neck.</p>
+                                <p class="text-xs text-gray-400">Cheeks, jaw and neck only — never T-zone. Lipid restoration for the zones where the barrier is thin and reactive but sebaceous load is low. Prevents the cheek dehydration that triggers compensatory redness.</p>
                             </div>
                         </div>
                         <div class="flex gap-3">
                             <span class="text-xs font-bold text-gray-600 mt-1">06</span>
                             <div>
                                 <h5 class="text-sm font-semibold">Hydragel</h5>
-                                <p class="text-xs text-gray-400"><strong>Sleep Mask:</strong> Seal and soothe.</p>
+                                <p class="text-xs text-gray-400">Full face sleep mask. On Resurfacer nights, this is the critical occlusive seal that prevents trans-epidermal water loss during acid turnover. On Youth Booster nights, it buffers retinol irritation. Non-negotiable.</p>
                             </div>
                         </div>
                     </div>
@@ -790,14 +781,14 @@
         <section id="nutraceuticals" class="mb-12">
             <h3 class="serif text-3xl mb-6">Internal Architecture Support</h3>
             <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
-                <p class="text-sm text-gray-600 mb-6 italic">To support the 'Anabolic Window' during this 10-day cycle:</p>
+                <p class="text-sm text-gray-600 mb-6 italic">To support the 'Anabolic Window' during this protocol:</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <!-- Item 1 -->
                     <div class="relative pl-6 border-l-2 border-gold">
                         <h4 class="serif text-lg text-gray-900 mb-2">Cortisol Management</h4>
                         <p class="text-xs text-gray-500 uppercase tracking-widest font-bold mb-1">Status: OPTIMIZED</p>
                         <p class="text-sm text-gray-600 leading-relaxed">
-                            Your Sleep Score (4/5) is our greatest asset. We are relying on this natural repair cycle to handle the aggressive '10-Day Pulse'.
+                            Your Sleep Score (4/5) is our greatest asset. We are relying on this natural repair cycle to handle the aggressive resurfacing and contracting phases.
                         </p>
                     </div>
                     <!-- Item 2 -->
@@ -824,7 +815,7 @@
         <section id="rules" class="mb-12">
             <div class="bg-[#1a1a1a] text-white rounded-xl p-8">
                 <h3 class="serif text-2xl mb-6 text-white border-b border-gray-700 pb-4">Protocol "Golden Rules"</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The Alcohol Restriction</h5>
                         <p class="text-xs leading-relaxed text-gray-300">Absolute restriction <strong>48 hours before/after</strong> Exosome sessions. Alcohol depletes NAD+, blocking signal reception.</p>
@@ -834,8 +825,12 @@
                         <p class="text-xs leading-relaxed text-gray-300">Avoid saunas and high-intensity cardio for 48 hours post-procedure to prevent vascular dilation (Redness).</p>
                     </div>
                     <div>
-                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The 10-Day Pulse</h5>
-                        <p class="text-xs leading-relaxed text-gray-300">We have accelerated your cycle to 10 days. Missing a session disrupts the 'Signal > Lift > Heal' cadence.</p>
+                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The Variable Pulse</h5>
+                        <p class="text-xs leading-relaxed text-gray-300">Your sessions range from 10 to 14-day intervals depending on the treatment intensity. The cadence is: Reset → Load → Resurface → Contract → Seal. Missing a session disrupts this biological sequence — particularly critical around the Sellas and Scarlet RF windows.</p>
+                    </div>
+                    <div>
+                        <h5 class="gold-text text-[0.65rem] font-bold uppercase tracking-widest mb-2">The SPF Protocol</h5>
+                        <p class="text-xs leading-relaxed text-gray-300">During active Sellas resurfacing phases (Days 41–60 and Days 101–111), apply UV Defence twice daily — morning and midday. Post-resurfacing epidermis has reduced melanin protection. Sun exposure during this window is the single fastest way to reverse Melanin Uniformity gains.</p>
                     </div>
                 </div>
             </div>
@@ -847,27 +842,34 @@
             <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
                 <div class="flex items-start gap-4">
                     <div class="bg-gray-100 p-3 rounded-full hidden md:block">
-                        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <svg class="w-6 h-6 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002-2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                     </div>
                     <div>
                         <h4 class="font-bold text-lg mb-2">Correction vs. Maintenance</h4>
                         <p class="text-sm text-gray-600 leading-relaxed mb-4">
                             We are now in the 'Correctional Phase'. The goal is to maximize the density we have built and physically lift the structure.
                         </p>
-                        <ul class="space-y-2 text-sm text-gray-600">
-                            <li class="flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
-                                <span><strong>Eye Bags:</strong> Expect a visible tightening of the 'puffy' look as the Scarlet RF tightens the orbital septum.</span>
+                        <ul class="space-y-4 text-sm text-gray-600">
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0 mt-1.5"></span>
+                                <span><strong>Pore Architecture:</strong> After two Scarlet RF sessions, one Sellas pass, and one Pico pass, expect a measurable reduction in pore diameter across the T-zone. The sebaceous fluorescence visible on Day 1 Wood's Lamp should be significantly reduced by the 120-day review.</span>
                             </li>
-                            <li class="flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
-                                <span><strong>Jowl Contour:</strong> The Collagen Gun will create a mechanical 'snap-back' effect along the jawline.</span>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0 mt-1.5"></span>
+                                <span><strong>Vascular Calm:</strong> The sequential Gradual Rebirth resets combined with three Exosome loads are designed to progressively thicken the capillary walls, reducing the diffuse redness and PIE macules across the mid-face. This is a gradual correction — expect visible progress by Day 61, meaningful stabilisation by Day 120.</span>
                             </li>
-                            <li class="flex items-center gap-2">
-                                <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0"></span>
-                                <span><strong>Redness:</strong> Should stabilize as the Exosomes thicken the barrier, masking the capillaries.</span>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0 mt-1.5"></span>
+                                <span><strong>Pigmentation:</strong> The two Sellas passes will address surface-level PIH and texture. Given that the pigment deposits are early-stage (not deeply established), a clinically visible improvement in tone uniformity is a realistic outcome within this timeline.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 bg-gold rounded-full shrink-0 mt-1.5"></span>
+                                <span><strong>Scarring:</strong> The two Youthful Renewal sessions and their 40B Exosome loads are the primary drivers here. Atrophic pits will not fully resolve in 120 days — but expect a softening of scar edges and a reduction in shadow depth as the matrix density is maintained.</span>
                             </li>
                         </ul>
+                        <div class="mt-6 p-4 bg-gray-50 border-l-4 border-gold italic text-sm text-gray-700">
+                            <strong>The honest benchmark:</strong> By Day 120 this skin should be calmer, clearer, tighter at the pore level, and more tonally even. That is the architecture we are building toward.
+                        </div>
                     </div>
                 </div>
             </div>
